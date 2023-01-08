@@ -17,7 +17,7 @@ class FileFinder:
         return False
 
     def iterate_files(self):
-        """使用迭代器组织并输出所有文件信息"""
+        """使用迭代器输出搜索的指定文件信息"""
 
         class FileIterator:
             def __init__(self, addresses):
@@ -38,7 +38,7 @@ class FileFinder:
         return FileIterator(self.addresses)
 
     def generate_files(self):
-        """使用生成器组织并输出所有文件信息"""
+        """使用生成器输出搜索的指定文件信息"""
         for address in self.addresses:
             yield address, os.stat(address).st_size
 
